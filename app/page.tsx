@@ -54,20 +54,24 @@ export default function Home() {
 
     return (
       <div className="flex-column align-center justify-center">
-        <select value={selectedCountry} onChange={(e) => setSelectedCountry(e.target.value)}>
+        <label className="text-lg font-light"htmlFor="country-select">Select a country:</label>
+        <select id="country-select" value={selectedCountry} onChange={(e) => setSelectedCountry(e.target.value)}>
           {countries.map((country: Country) => (
             <option key={country.isoCode} value={country.isoCode}>
               {country.name[0].text}
             </option>
           ))}
         </select>
-        <div>
+        <div className="grid gap-4 mt-6 p-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-start">
           {holidays.map((holiday: Holiday) => (
-            <div className="flex" key={holiday.id}>
-              <h3>{formatDate(holiday.startDate)}</h3>-
-              <p>{holiday.name[0].text}</p>
-            </div>
-          ))}
+          <div
+            className="border rounded-lg p-4 shadow-sm flex flex-col items-center bg-white/50"
+            key={holiday.id}
+          >
+          <h3 className="font-semibold text-lg mb-2">{formatDate(holiday.startDate)}</h3>
+          <p className="text-gray-700">{holiday.name[0].text}</p>
+          </div>
+        ))}
         </div>
       </div>
     );
@@ -76,8 +80,14 @@ export default function Home() {
 
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <CountryList />
-    </QueryClientProvider>
+    <div className="flex-column align-center justify-center text-center">
+      <div className="p-8">
+        <span className="text-5xl font-bold">Find your holidays!</span>
+      </div>
+      <QueryClientProvider client={queryClient}>
+        <CountryList />
+      </QueryClientProvider>
+    </div>
+    
   )
 }
