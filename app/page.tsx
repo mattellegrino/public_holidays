@@ -13,6 +13,11 @@ export default function Home() {
           <h2 className="text-2xl font-bold mb-2">Accordions</h2>
         </div>
       </Link>
+      <Link href="/local_storage">
+        <div className="cursor-pointer bg-white rounded-xl border shadow-md p-6 transition hover:shadow-lg">
+          <h2 className="text-2xl font-bold mb-2">Local Storage</h2>
+        </div>
+      </Link>
     </div>
   );
 }
