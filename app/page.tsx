@@ -18,6 +18,11 @@ export default function Home() {
           <h2 className="text-2xl font-bold mb-2">Local Storage</h2>
         </div>
       </Link>
+      <Link href="/memory_game">
+        <div className="cursor-pointer bg-white rounded-xl border shadow-md p-6 transition hover:shadow-lg">
+          <h2 className="text-2xl font-bold mb-2">Memory Game</h2>
+        </div>
+      </Link>
     </div>
   );
 }

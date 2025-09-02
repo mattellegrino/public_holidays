@@ -66,7 +66,7 @@ export default function PublicHolidays() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
             <span className="sr-only">Go Home</span>
-      </Link>
+        </Link>
         <label className="text-lg font-light"htmlFor="country-select">Select a country:</label>
         <select id="country-select" value={selectedCountry} onChange={(e) => setSelectedCountry(e.target.value)}>
           {countries.map((country: Country) => (
